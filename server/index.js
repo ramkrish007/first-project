@@ -9,7 +9,7 @@ const movieRouter = require('./routes/movie-router')
 const app = express()
 const apiPort = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/cinema', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://admin:Ram_krish007@movieapp.5eyzl.mongodb.net/<dbname>?retryWrites=true&w=majority', {
     useNewParser: true,
     useUnifiedTopology: true
 });

@@ -1,12 +1,23 @@
 
 const mongoose = require('mongoose')
 
-mongoose
-    .connect('mongodb://127.0.0.1:27017/cinema', { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
+const url = 'mongodb+srv://admin:Ram_krish007@movieapp.5eyzl.mongodb.net/<dbname>?retryWrites=true&w=majority'
+
+const connectionParams={
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+}
+mongoose.connect(url,connectionParams)
+    .then( () => {
+        console.log('Connected to database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. \n${err}`);
     })
 
 const db = mongoose.connection
 
 module.exports = db
+
+
