@@ -64,12 +64,12 @@ class MoviesInsert extends Component {
         this.setState({ time })
     }
 
-    handleIncludeMovie = async () => {
+    handleIncludeMovie =  () => {
         const { name, rating, time } = this.state
         const arrayTime = time.split('/')
         const payload = { name, rating, time: arrayTime }
 
-        await api.insertMovie(payload).then(res => {
+         api.insertMovie(payload).then(res => {
             window.alert(`Movie inserted successfully`)
             this.setState({
                 name: '',
